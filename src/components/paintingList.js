@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Painting from "./Painting";
 
 const PaintingList = ({paintings}) => (
@@ -17,11 +18,13 @@ const PaintingList = ({paintings}) => (
   </ul>
 )
 
-PaintingList.prototype = {
-  paintings: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-  })
+PaintingList.propTypes = {
+  paintings: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    })
   ).isRequired,
 };
+
 
 export default PaintingList;
